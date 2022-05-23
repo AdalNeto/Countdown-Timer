@@ -50,8 +50,9 @@ function dateTimeToDate(goalDateTime){
     let day = goalDateTime.slice(8, 10);
     let hour = goalDateTime.slice(11, 13);
     let minute = goalDateTime.slice(14, 16);
+    let second = goalDateTime.slice(17, 19);
 
-    return `${month} ${day}, ${year} ${hour}:${minute}:00` ;
+    return `${month} ${day}, ${year} ${hour}:${minute}:${second}` ;
 
 }
 
