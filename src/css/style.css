@@ -1,0 +1,47 @@
+body{
+    background-color: black;
+    color:rgb(116, 0, 131);
+    font-family: 'Orbitron', sans-serif;
+}
+.inputButton{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    /*flex-direction: column*/ 
+}
+input[type=datetime-local] {
+    background-color: #313131;
+    color: white;
+    padding: 10px 10px;
+    margin: 4px 2px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid #ccc;
+}
+
+button {
+    background-color: #313131;
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+}
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+p {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 120px;
+    margin-top: 0px;
+}
