@@ -57,43 +57,50 @@ function dateTimeToDate(goalDateTime){
 }
 
 function startContdown(){
+  
+
     let x = setInterval(function() {
-
-    let countDownDate = new Date(getGoalDate())
     
-    let now = new Date()        
-   
-    let distance = (countDownDate - now)/1000;
+       if (getGoalDate()!=(undefined +` ,  ::`)) {
+            let countDownDate = new Date(getGoalDate())
+            let now = new Date() 
         
-   
-    let days = Math.floor(distance / (60 * 60 * 24));
-    let hours = Math.floor((distance % (60 * 60 * 24)) / (60 * 60));
-    let minutes = Math.floor((distance % (60 * 60)) / (60));
-    let seconds = Math.floor((distance % (60)));
-    
-   
-    if (distance>=(60 * 60 * 24)){
-            document.getElementById("timedisplay").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
-        }
-    if (distance<(60 * 60 * 24) && distance>=(60*60)){
-            document.getElementById("timedisplay").innerHTML = hours + "h "
-            + minutes + "m " + seconds + "s ";
-        }
-    if (distance<(60 * 60) && distance>=(60)){ 
-            document.getElementById("timedisplay").innerHTML = minutes + "m " + seconds + "s ";
-        }
-    if (distance<60 ){
-            document.getElementById("timedisplay").innerHTML = seconds + "s ";
-        }
+            let distance = (countDownDate - now)/1000;
+                
+        
+            let days = Math.floor(distance / (60 * 60 * 24));
+            let hours = Math.floor((distance % (60 * 60 * 24)) / (60 * 60));
+            let minutes = Math.floor((distance % (60 * 60)) / (60));
+            let seconds = Math.floor((distance % (60)));
             
-
-    
-    
         
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("timedisplay").innerHTML = "EXPIRED";
-    }
+            if (distance>=(60 * 60 * 24)){
+                    document.getElementById("timedisplay").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+                }
+            if (distance<(60 * 60 * 24) && distance>=(60*60)){
+                    document.getElementById("timedisplay").innerHTML = hours + "h "
+                    + minutes + "m " + seconds + "s ";
+                }
+            if (distance<(60 * 60) && distance>=(60)){ 
+                    document.getElementById("timedisplay").innerHTML = minutes + "m " + seconds + "s ";
+                }
+            if (distance<60 ){
+                    document.getElementById("timedisplay").innerHTML = seconds + "s ";
+                }
+                    
+
+            
+            
+                
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timedisplay").innerHTML = "EXPIRED";
+            }
+       
+       }
+        else {
+            clearInterval(x);
+        }
     }, 1000);
 }
